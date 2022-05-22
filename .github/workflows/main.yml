@@ -40,7 +40,7 @@ jobs:
           tag_name: ${{ github.ref }}
           body_path: CHANGELOG.md
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
 
   build:
     name: Build project for ${{ matrix.TargetPlatform }}
@@ -95,7 +95,7 @@ jobs:
       - name: Upload build assets to release
         uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ needs.create-release-draft.outputs.upload_url }}
           asset_path: ./${{ steps.build-name.outputs.build_name }}.zip
@@ -109,7 +109,7 @@ jobs:
     steps:
       - uses: eregon/publish-release@v1
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           release_id: ${{ needs.create-release-draft.outputs.id }}
 
@@ -123,4 +123,4 @@ jobs:
         uses: larryjoelane/delete-release-action@v1.0.22
         with:
           release-name: ${{ needs.create-release-draft.outputs.version }}
-          token: ${{ github.token }}
+          token: ${{ secrets.PAT }}

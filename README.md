@@ -1,6 +1,6 @@
 # Procedural Generation
 
-This is the second gold achievements for the Maths & Physics class in THUAS'
+This is the second gold achievements for the Game Programming class in THUAS'
 Game Development & Simulation minor.
 
 ## Instructions
@@ -15,12 +15,15 @@ The player can input:
 
 - the size of the dungeon
 - a range for the size of the rooms
-- a range of how many rooms are spawned
-- a range for the size of the hallways
+- a range for the amount of rooms spawned
+- a range for the length of the hallways
 
 ### Result
 
-*Work in progress*
+<div align="center">
+  <img src="./resources/demo.gif" alt="project demo" border="2px black solid"/>
+  <p><i>Project demo</i></p>
+</div>
 
 ## Credits
 
